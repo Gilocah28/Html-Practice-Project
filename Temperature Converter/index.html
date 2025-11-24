@@ -13,17 +13,34 @@
       <div class="input-container">
         <div class="celsius-container cons">
           <label>Celsius:</label>
-          <input type="text" placeholder="Enter Temperature" />
+          <input
+            id="celsius"
+            type="text"
+            placeholder="Enter Temperature"
+            onchange="degreeConverter(event)"
+          />
         </div>
         <div class="fahrenheit-container cons">
           <label>Fahrenheit:</label>
-          <input type="text" placeholder="Enter Temperature" />
+          <input
+            id="fahrenheit"
+            type="text"
+            placeholder="Enter Temperature"
+            onchange="degreeConverter(event)"
+          />
         </div>
         <div class="kelvin-container cons">
           <label>Kelvin:</label>
-          <input type="text" placeholder="Enter Temperature" />
+          <input
+            id="kelvin"
+            type="text"
+            placeholder="Enter Temperature"
+            onchange="degreeConverter(event)"
+          />
         </div>
       </div>
     </main>
+
+    <script src="./app.js"></script>
   </body>
 </html>

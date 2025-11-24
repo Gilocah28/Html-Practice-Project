@@ -32,4 +32,12 @@ h1{
 .cons{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.cons input{
+  padding: 5px;
+}
+
+.cons input, .cons label{
+  margin-bottom: 10px;
 }
