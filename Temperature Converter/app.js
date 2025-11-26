@@ -21,8 +21,8 @@ function degreeConverter(event) {
 
 function celsiusConverter() {
   const celValue = Number(celsiusInpt.value);
-  fahranhietInpt.value = celValue * 1.8 + 32;
-  kelvinInpt.value = celValue + 273.15;
+  fahranhietInpt.value = fixedNumberDecimal(celValue * 1.8 + 32);
+  kelvinInpt.value = fixedNumberDecimal(celValue + 273.15);
 }
 
 function fahrenheitConverter() {
