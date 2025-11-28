@@ -19,3 +19,12 @@ function ageCalculator() {
     ageNow > 1 ? "years" : "year"
   } old`;
 }
+
+const dateFormat = new Date();
+const dateNow = dateFormat.toLocaleString("default", {
+  month: "long",
+  day: "numeric",
+  weekday: "long",
+});
+
+console.log(dateNow);
