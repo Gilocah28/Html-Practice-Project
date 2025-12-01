@@ -19,9 +19,8 @@ async function init() {
   displayData(data);
 }
 
-init();
-
 function displayData(data) {
+  const unorderList = document.getElementById("list-container");
   data.forEach((reciepe) => {
     const liElem = document.createElement("li");
     const imgElem = document.createElement("img");
@@ -33,13 +32,26 @@ function displayData(data) {
     h2Elem.innerHTML = reciepe.title;
 
     //img source element
-    imgElem.scr = reciepe.image;
+    imgElem.src = reciepe.image;
     imgElem.alt = reciepe.image;
 
-    paraElem.innerHTML = `<strong>Ingredients:</strong> ${reciepe.extendedIngredients.map(
-      (ingredient) => {}
-    )}`;
+    const ingredients = reciepe.extendedIngredients
+      ? reciepe.extendedIngredients.map((ing) => ing.original).join("; ")
+      : "No ingredients available";
 
-    console.log(reciepe);
+    paraElem.innerHTML = `<strong>Ingredients: </strong> ${ingredients}`;
+
+    btnElem.textContent = "VIEW DETAILS";
+
+    liElem.append(imgElem);
+    liElem.append(divElem);
+    divElem.classList.add("info-container");
+    divElem.append(h2Elem);
+    divElem.append(paraElem);
+    divElem.append(btnElem);
+
+    unorderList.append(liElem);
   });
 }
+
+init();
