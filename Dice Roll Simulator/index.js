@@ -42,7 +42,7 @@ function spanElement() {
     rollResult: diceRoll,
   };
 
-  rollResultData.unshift(data);
+  rollResultData.push(data);
   updateRollList();
 }
 
