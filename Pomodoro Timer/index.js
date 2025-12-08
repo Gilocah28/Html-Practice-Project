@@ -23,8 +23,9 @@ function startTimer() {
       document.body.style.backgroundColor = "red";
       minutes = 25;
       second = 0;
-    }
-    if (second === 0) {
+      displayTimer();
+      return;
+    } else if (second === 0) {
       minutes--;
       second = 60;
     }
