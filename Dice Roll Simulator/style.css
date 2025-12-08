@@ -43,6 +43,12 @@ span {
       background-color: #47a5c4;
       color: white;
       font-weight: bold;
+      cursor: pointer;
+      transition: background-color 200ms ease-in-out;
+
+      &:hover{
+        background-color: #68b2ca;
+      }
     }
   }
 
