@@ -5,9 +5,9 @@ const stoptBtn = document.getElementById("stop");
 const resetBtn = document.getElementById("reset");
 
 // Display the timer
-let minutes = 1;
+let minutes = 25;
 let second = 0;
-let intervalID;
+let intervalID = null;
 
 function displayTimer() {
   const secondStringFormat = `${second < 10 ? "0" + second : second}`;
@@ -17,10 +17,11 @@ function displayTimer() {
 
 // start the timer
 function startTimer() {
+  startBtn.disabled = true;
+  startBtn.style.opacity = 0.7;
   intervalID = setInterval(function () {
     if (minutes === 0 && second === 0) {
       stopTimer();
-      document.body.style.backgroundColor = "red";
       minutes = 25;
       second = 0;
       displayTimer();
@@ -34,13 +35,27 @@ function startTimer() {
     displayTimer();
   }, 1000);
 }
-startBtn.addEventListener("click", startTimer);
 
 // stop the timer
 function stopTimer() {
   clearInterval(intervalID);
+  intervalID = null;
+  startBtn.disabled = false;
+  startBtn.style.opacity = 1;
 }
 
 // reset the time
+function resetTimer() {
+  clearInterval(intervalID);
+  minutes = 25;
+  second = 0;
+  intervalID = null;
+  displayTimer();
+  startBtn.disabled = false;
+  startBtn.style.opacity = 1;
+}
 
 //excute all code or press the button
+startBtn.addEventListener("click", startTimer);
+stoptBtn.addEventListener("click", stopTimer);
+resetBtn.addEventListener("click", resetTimer);
