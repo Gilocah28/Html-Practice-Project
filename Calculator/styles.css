@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #3b4663;
+  color: white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 350px;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    max-width: 600px;
+
+    h1 {
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 10px;
+    }
+  }
+  .calcu-container {
+    background-color: #182033;
+    padding: 20px 15px;
+    margin-bottom: 15px;
+    text-align: right;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 90px;
+
+    .current-operand {
+      font-size: 2rem;
+      color: white;
+      margin-top: 5px;
+    }
+  }
+
+  .operands-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 20px;
+    background-color: #252d45;
+    border-radius: 8px;
+
+    .reset,
+    .equals {
+      grid-column: span 2;
+    }
+
+    .reset,
+    .delete {
+      background-color: #64719c;
+      color: white;
+      font-size: 14px;
+    }
+
+    .equals {
+      background-color: #d14030;
+      color: white;
+    }
+
+    button {
+      padding: 10px 12px;
+      font-size: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #494e61;
+      outline: none;
+      border: none;
+      border-radius: 8px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
